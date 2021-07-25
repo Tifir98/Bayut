@@ -2,12 +2,8 @@ import unittest
 import requests
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
+
 
 class PythonOrgSearch(unittest.TestCase):
 
@@ -52,6 +48,8 @@ class PythonOrgSearch(unittest.TestCase):
                 self.assertEqual(invalidResultFound,False)
             except NoSuchElementException:
                 self.fail("Cannot find list")
+        else:
+            self.fail("https://www.bayut.com/ unreachable!")
 
     #Test: Verify Popular Searches links work correctly
     def test_search_links(self):
